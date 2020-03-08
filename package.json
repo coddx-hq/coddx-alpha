@@ -1,0 +1,76 @@
+{
+  "name": "coddx-alpha",
+  "displayName": "Coddx (alpha)",
+  "description": "Coddx - a collection of tools that help developers program efficiently. One of the features is generating multiple files from templates quickly.",
+  "version": "0.0.2",
+  "publisher": "coddx",
+  "homepage": "https://github.com/coddx-hq",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/coddx-hq/coddx-alpha.git"
+  },
+  "engines": {
+    "vscode": "^1.29.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.viewconfig"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "dummyconfig",
+        "aliases": [
+          "DummyConfig",
+          "dc"
+        ],
+        "extensions": [
+          ".json"
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.viewconfig",
+        "title": "Generate files",
+        "category": "Coddx"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "npm-run-all compile:*",
+    "watch": "npm-run-all -p watch:*",
+    "compile:extension": "tsc --jsx react -p ./",
+    "compile:views": "webpack --mode development",
+    "watch:extension": "tsc -watch -p ./",
+    "watch:views": "webpack --watch --mode development",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^10.12.21",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "css-loader": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^6.0.4",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.1",
+    "vscode": "^1.1.28",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
+  },
+  "dependencies": {
+    "nunjucks": "^3.2.0",
+    "prismjs": "^1.19.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-simple-code-editor": "^0.11.0"
+  }
+}
