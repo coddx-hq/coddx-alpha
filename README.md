@@ -8,6 +8,13 @@ One of the features is generating multiple files from templates quickly.
 
 ### Usage
 
-- Bring up the Command Palette (F1), type and select: Coddx: Generate Files to open the panel.
-- Verify the output path, make sure it exists.
+- Open Coddx panel:
+  - Bring up the Command Palette (F1), type and select: Coddx: Generate Files.
+  - Or: right click on a directory, select: Generate files.
+- Verify the output path (relative to Project root), new directory will be created if not existed.
 - Enter the new file name to generate file(s).
+
+### Next milestone:
+
+- Support: https://github.com/coddx-hq/coddx-alpha
+- Feedbacks, suggestions or ideas are welcome! Thanks.
