@@ -8,7 +8,7 @@ Coddx uses Mozilla's Templating Engine called <a href="https://github.com/mozill
 
 Built-in Template Variables:
 - {{fileName}} - will be replace with the value of "File Name" field.
-- {{yyyy}}, {{mm}}, {{dd}} - year, month, day.
+- {{YYYY}}, {{MM}}, {{DD}}, {{HH}}, {{mm}} - year, month, day, hours (24), minutes.
 
 <a href="https://mozilla.github.io/nunjucks/templating.html">Nunjucks Templating Syntax</a>
 
