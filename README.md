@@ -6,6 +6,15 @@ One of the features is generating multiple files from templates quickly.
 
 <img src="docs/media/coddx-demo.gif" />
 
+### Features:
+
+- Work with any programming languages.
+- Templating syntax.
+- Store templates as a single file (can be commited to git, shared with others).
+- Built-in params (fileName, date, time, etc.).
+- Custom params.
+- Context menu to generate files/directories from anywhere.
+
 ### Usage
 
 - Open Coddx panel:
