@@ -1,22 +1,34 @@
 {
   "name": "coddx-alpha",
-  "displayName": "Coddx (alpha)",
-  "description": "Coddx - a collection of tools that help developers program efficiently. One of the features is generating multiple files from templates quickly.",
-  "version": "0.0.2",
+  "displayName": "Coddx",
+  "description": "Coddx - a collection of tools that help developers program efficiently. Some useful features like: Task Board to manage tasks in TODO.md, generating multiple files from templates quickly.",
+  "version": "0.2.1",
   "publisher": "coddx",
   "homepage": "https://github.com/coddx-hq",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/coddx-hq/coddx-alpha.git"
+    "type": "git",
+    "url": "https://github.com/coddx-hq/coddx-alpha.git"
   },
+  "keywords": [
+    "generate",
+    "generator",
+    "template",
+    "webdev",
+    "snippet",
+    "file"
+  ],
+  "icon": "docs/media/logo.png",
   "engines": {
     "vscode": "^1.29.0"
   },
   "categories": [
+    "Programming Languages",
+    "Snippets",
     "Other"
   ],
   "activationEvents": [
-    "onCommand:extension.viewconfig"
+    "onCommand:extension.viewconfig",
+    "onCommand:extension.taskboard"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -37,14 +49,26 @@
         "command": "extension.viewconfig",
         "title": "Generate files",
         "category": "Coddx"
+      },
+      {
+        "command": "extension.taskboard",
+        "title": "Task Board",
+        "category": "Coddx"
       }
-    ]
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.viewconfig"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "npm-run-all compile:*",
     "watch": "npm-run-all -p watch:*",
-    "compile:extension": "tsc --jsx react -p ./",
+    "compile:extension": "rm -rf out && tsc --jsx react -p ./",
     "compile:views": "webpack --mode development",
     "watch:extension": "tsc -watch -p ./",
     "watch:views": "webpack --watch --mode development",
@@ -70,7 +94,9 @@
     "nunjucks": "^3.2.0",
     "prismjs": "^1.19.0",
     "react": "^16.13.0",
+    "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^16.13.0",
-    "react-simple-code-editor": "^0.11.0"
+    "react-simple-code-editor": "^0.11.0",
+    "styled-components": "^5.0.1"
   }
 }

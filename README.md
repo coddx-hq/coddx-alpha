@@ -2,20 +2,33 @@
 
 Coddx - a collection of tools that help developers program efficiently.
 
-One of the features is generating multiple files from templates quickly.
-
 <img src="docs/media/coddx-demo.gif" />
 
-### Features:
+Some useful features like:
+- Task Board - manage tasks and save them as TODO.md - a simple plain text file. The syntax is compatible with [Github Markdown](https://github.github.com/gfm/#task-list-items-extension-)
+- Generating multiple files from templates quickly.
+
+### Task Board
+
+<img src="docs/media/task-board.png" height="280" />
+
+#### Usage:
+- Open Coddx Task Board:
+  - Bring up the Command Palette (F1), type and select: Coddx: Task Board.
+- When interacting with the Task Board, TODO.md will be created or updated automatically.
+- Vice versa, TODO.md can be edited manually, Task Board will load it every time.
+
+### Generate Files
 
 - Work with any programming languages.
 - Templating syntax.
 - Store templates as a single file (can be commited to git, shared with others).
+- Auto create sub-directories.
 - Built-in params (fileName, date, time, etc.).
 - Custom params.
 - Context menu to generate files/directories from anywhere.
 
-### Usage
+#### Usage:
 
 - Open Coddx panel:
   - Bring up the Command Palette (F1), type and select: Coddx: Generate Files.
@@ -30,6 +43,7 @@ One of the features is generating multiple files from templates quickly.
 
 - Support: https://github.com/coddx-hq/coddx-alpha/issues
 - <a href="https://github.com/coddx-hq/coddx-alpha/blob/master/docs/documentation.md">Documentation / Guides</a>
+- <a href="https://github.com/coddx-hq/coddx-alpha/blob/master/CHANGELOG.md">Change Log</a>
 
 ### Next milestone:
 
