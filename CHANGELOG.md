@@ -1,6 +1,6 @@
 # Change Log
 
-## [0.2.1] - 2020-03-14
+## [0.2.2] - 2020-03-14
 ### Added
 - Task Board - manage tasks and save them as TODO.md - a simple plain text file. The syntax is compatible with [Github Markdown](https://github.github.com/gfm/#task-list-items-extension-)
 

@@ -5,18 +5,26 @@ Coddx - a collection of tools that help developers program efficiently.
 <img src="docs/media/coddx-demo.gif" />
 
 Some useful features like:
-- Task Board - manage tasks and save them as TODO.md - a simple plain text file. The syntax is compatible with [Github Markdown](https://github.github.com/gfm/#task-list-items-extension-)
+- Task Board - manage tasks and save them as TODO.md - a simple plain text file.
 - Generating multiple files from templates quickly.
+
+<hr />
 
 ### Task Board
 
-<img src="docs/media/task-board.png" height="280" />
+- Manage tasks in TODO.md - a plain text markdown file.
+- The syntax is compatible with [Github Markdown](https://github.github.com/gfm/#task-list-items-extension-)
+- TODO.md file is portable and can be committed with Pull Requests (PRs) to git repositories.
 
 #### Usage:
 - Open Coddx Task Board:
   - Bring up the Command Palette (F1), type and select: Coddx: Task Board.
 - When interacting with the Task Board, TODO.md will be created or updated automatically.
 - Vice versa, TODO.md can be edited manually, Task Board will load it every time.
+
+<img src="docs/media/task-board.png" height="280" />
+
+<hr />
 
 ### Generate Files
 
