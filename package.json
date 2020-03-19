@@ -2,7 +2,7 @@
   "name": "coddx-alpha",
   "displayName": "Coddx",
   "description": "Coddx - a collection of tools that help developers program efficiently. Some useful features like: Task Board to manage tasks in TODO.md, generating multiple files from templates quickly.",
-  "version": "0.2.1",
+  "version": "0.2.7",
   "publisher": "coddx",
   "homepage": "https://github.com/coddx-hq",
   "repository": {
@@ -10,6 +10,10 @@
     "url": "https://github.com/coddx-hq/coddx-alpha.git"
   },
   "keywords": [
+    "kanban",
+    "task",
+    "project",
+    "management",
     "generate",
     "generator",
     "template",
@@ -22,6 +26,7 @@
     "vscode": "^1.29.0"
   },
   "categories": [
+    "Extension Packs",
     "Programming Languages",
     "Snippets",
     "Other"
@@ -32,18 +37,7 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
-    "languages": [
-      {
-        "id": "dummyconfig",
-        "aliases": [
-          "DummyConfig",
-          "dc"
-        ],
-        "extensions": [
-          ".json"
-        ]
-      }
-    ],
+    "languages": [],
     "commands": [
       {
         "command": "extension.viewconfig",
@@ -52,7 +46,7 @@
       },
       {
         "command": "extension.taskboard",
-        "title": "Task Board",
+        "title": "Task Board - TODO.md",
         "category": "Coddx"
       }
     ],
@@ -94,6 +88,7 @@
     "nunjucks": "^3.2.0",
     "prismjs": "^1.19.0",
     "react": "^16.13.0",
+    "react-autosize-textarea": "^7.0.0",
     "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^16.13.0",
     "react-simple-code-editor": "^0.11.0",

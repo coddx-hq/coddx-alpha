@@ -2,8 +2,6 @@
 
 Coddx - a collection of tools that help developers program efficiently.
 
-<img src="docs/media/coddx-demo.gif" />
-
 Some useful features like:
 - Task Board - manage tasks and save them as TODO.md - a simple plain text file.
 - Generating multiple files from templates quickly.
@@ -45,6 +43,8 @@ Some useful features like:
 - Verify the output path (relative to Project root), new directory will be created if not existed.
 - Enter the new file name to generate file(s).
 
+<img src="docs/media/coddx-demo.gif" />
+  
 <img src="docs/media/panel.png" height="280" />
 
 ### Support
