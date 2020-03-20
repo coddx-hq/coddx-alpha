@@ -2,7 +2,7 @@
   "name": "coddx-alpha",
   "displayName": "Coddx",
   "description": "Coddx - a collection of tools that help developers program efficiently. Some useful features like: Task Board to manage tasks in TODO.md, generating multiple files from templates quickly.",
-  "version": "0.2.7",
+  "version": "0.2.10",
   "publisher": "coddx",
   "homepage": "https://github.com/coddx-hq",
   "repository": {
@@ -10,6 +10,8 @@
     "url": "https://github.com/coddx-hq/coddx-alpha.git"
   },
   "keywords": [
+    "todo",
+    "todolist",
     "kanban",
     "task",
     "project",
@@ -64,7 +66,7 @@
     "watch": "npm-run-all -p watch:*",
     "compile:extension": "rm -rf out && tsc --jsx react -p ./",
     "compile:views": "webpack --mode development",
-    "watch:extension": "tsc -watch -p ./",
+    "watch:extension": "tsc --jsx react -watch -p ./",
     "watch:views": "webpack --watch --mode development",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "npm run compile && node ./node_modules/vscode/bin/test"

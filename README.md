@@ -3,6 +3,7 @@
 Coddx - a collection of tools that help developers program efficiently.
 
 Some useful features like:
+
 - Task Board - manage tasks and save them as TODO.md - a simple plain text file.
 - Generating multiple files from templates quickly.
 
@@ -15,10 +16,13 @@ Some useful features like:
 - TODO.md file is portable and can be committed with Pull Requests (PRs) to git repositories.
 
 #### Usage:
+
 - Open Coddx Task Board:
   - Bring up the Command Palette (F1), type and select: Coddx: Task Board.
 - When interacting with the Task Board, TODO.md will be created or updated automatically.
 - Vice versa, TODO.md can be edited manually, Task Board will load it every time.
+
+<img src="docs/media/task-board-demo.gif" />
 
 <img src="docs/media/task-board.png" height="280" />
 
@@ -28,8 +32,8 @@ Some useful features like:
 
 - Work with any programming languages.
 - Templating syntax.
-- Store templates as a single file (can be commited to git, shared with others).
-- Auto create sub-directories.
+- Store templates as a single file (can be committed to git, shared with others).
+- Auto-create sub-directories.
 - Built-in params (fileName, date, time, etc.).
 - Custom params.
 - Context menu to generate files/directories from anywhere.
@@ -38,9 +42,9 @@ Some useful features like:
 
 - Open Coddx panel:
   - Bring up the Command Palette (F1), type and select: Coddx: Generate Files.
-  - Or: right click on a directory, select: Generate files.
-- Verify Template to suit your needs. (see <a href="https://github.com/coddx-hq/coddx-alpha/blob/master/docs/documentation.md">Docs</a> for syntax)
-- Verify the output path (relative to Project root), new directory will be created if not existed.
+  - Or: right-click on a directory, select: Generate files.
+- Verify Template to suit your needs. (See <a href="https://github.com/coddx-hq/coddx-alpha/blob/master/docs/documentation.md">Docs</a> for syntax)
+- Verify the output path (relative to Project root), a new directory will be created if not existed.
 - Enter the new file name to generate file(s).
 
 <img src="docs/media/coddx-demo.gif" />

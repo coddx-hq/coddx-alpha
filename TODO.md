@@ -4,16 +4,20 @@ Coddx Project Description
 
 ### Todo
 
-- [ ] Add Feedback link  
 - [ ] Create Github todomd org  
 - [ ] Customize todo file path  
 
 ### In Progress
 
-- [ ] Add Open File link  
+- [ ] Add Feedback link  
+- [ ] Respect light theme  
 
 ### Done ✓
 
-- [x] Auto focus on New Task  
-- [x] Check mark to mark as Done  
+- [x] Auto save for Task Re-ordering  
+- [x] Add Open File link  
+- [x] Split to different Doc Topics  
+- [x] Auto focus on New Task 03/18/2020  
+- [x] Check mark to mark as Done 03/18/2020  
+- [x] Setup coddx mailbox  
 
