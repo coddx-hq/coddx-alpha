@@ -1,7 +1,8 @@
 # Change Log
 
-## [0.2.10] - 2020-03-20
+## [0.2.12] - 2020-03-21
 
+- Task Board - search box
 - Task Board - autofocus when creating a new task.
 - Task Board - checkmark to mark a task as complete.
 - Task Board Doc

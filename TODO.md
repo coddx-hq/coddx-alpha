@@ -14,6 +14,7 @@ Coddx Project Description
 
 ### Done ✓
 
+- [x] Add Search Box  
 - [x] Auto save for Task Re-ordering  
 - [x] Add Open File link  
 - [x] Split to different Doc Topics  

@@ -2,7 +2,7 @@
   "name": "coddx-alpha",
   "displayName": "Coddx",
   "description": "Coddx - a collection of tools that help developers program efficiently. Some useful features like: Task Board to manage tasks in TODO.md, generating multiple files from templates quickly.",
-  "version": "0.2.10",
+  "version": "0.2.12",
   "publisher": "coddx",
   "homepage": "https://github.com/coddx-hq",
   "repository": {
