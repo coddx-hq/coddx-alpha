@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.2.15] - 2020-03-23
+
+- Task Board - support multiple task lists defined in user's settings.json.
+
 ## [0.2.12] - 2020-03-21
 
 - Task Board - search box

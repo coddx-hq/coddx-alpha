@@ -35,3 +35,8 @@ Project Description
 
 - [x] Complete Task
 ```
+
+### Settings
+
+- Multiple TODO files:
+  - In your settings.json file, add this: `"coddx.taskBoard.fileList": "TODO.md, folder/TODO-name.md"` (comma separated, use your file names)

@@ -4,16 +4,16 @@ Coddx Project Description
 
 ### Todo
 
-- [ ] Create Github todomd org  
-- [ ] Customize todo file path  
 
 ### In Progress
 
-- [ ] Add Feedback link  
+- [ ] Task description  
 - [ ] Respect light theme  
 
 ### Done ✓
 
+- [x] Add Help link  
+- [x] Multiple task lists  
 - [x] Add Search Box  
 - [x] Auto save for Task Re-ordering  
 - [x] Add Open File link  
