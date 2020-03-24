@@ -14,6 +14,8 @@ Some useful features like:
 - Manage tasks in TODO.md - a plain text markdown file.
 - The syntax is compatible with [Github Markdown](https://github.github.com/gfm/#task-list-items-extension-)
 - TODO.md file is portable and can be committed with Pull Requests (PRs) to git repositories.
+- Support custom file, multiple task lists.
+- Checkbox is optional (if your task doesn't have it).
 
 #### Usage:
 

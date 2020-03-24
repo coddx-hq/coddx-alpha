@@ -5,6 +5,8 @@
 - Manage tasks in TODO.md - a plain text markdown file.
 - The syntax is compatible with [Github Markdown](https://github.github.com/gfm/#task-list-items-extension-)
 - TODO.md file is portable and can be committed with Pull Requests (PRs) to git repositories.
+- Support custom file, multiple task lists.
+- Checkbox is optional (if your task doesn't have it).
 
 ### TODO.md
 
@@ -13,6 +15,7 @@
   - Please follow the typical structure like in the example so it can work properly. If it fails to open, please revert or re-generate your TODO.md file to make it work again.
   - There are "2 spaces" at the end of every task to show as line breaks on Github pages. (Otherwise, Github will render tasks next to each other on the same line)
   - Done-column name must have "✓" or "[x]" in the name.
+  - Checkboxes are added by default (Github checklist syntax), but if you remove them from task titles, they will not be added next time.
 
 - For now, after making changes to TODO.md file, please re-open the Task Board to loads those changes.
 

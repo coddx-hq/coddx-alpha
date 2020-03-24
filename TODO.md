@@ -4,14 +4,16 @@ Coddx Project Description
 
 ### Todo
 
+- [ ] Task description  
 
 ### In Progress
 
-- [ ] Task description  
 - [ ] Respect light theme  
 
 ### Done ✓
 
+- [x] Optional checkbox in task title  
+- [x] Default to the 1st Task List  
 - [x] Add Help link  
 - [x] Multiple task lists  
 - [x] Add Search Box  

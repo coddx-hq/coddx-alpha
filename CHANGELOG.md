@@ -1,8 +1,10 @@
 # Change Log
 
-## [0.2.15] - 2020-03-23
+## [0.2.17] - 2020-03-24
 
 - Task Board - support multiple task lists defined in user's settings.json.
+- Task Board - refresh button to reload file content.
+- Task Board - checkbox is now optional (if task title doesn't have it).
 
 ## [0.2.12] - 2020-03-21
 
