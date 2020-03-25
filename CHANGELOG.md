@@ -1,6 +1,6 @@
 # Change Log
 
-## [0.2.17] - 2020-03-24
+## [0.2.18] - 2020-03-24
 
 - Task Board - support multiple task lists defined in user's settings.json.
 - Task Board - refresh button to reload file content.
@@ -15,7 +15,7 @@
 
 ## [0.2.3] - 2020-03-15
 
-- Task Board - manage tasks and save them as TODO.md - a simple plain text file. The syntax is compatible with [Github Markdown](https://github.github.com/gfm/#task-list-items-extension-)
+- Task Board - manage tasks and save them as TODO.md - a simple plain text file. The syntax is compatible with [Github Markdown](https://bit.ly/2wBp1Mk)
 
 ## [0.1.4] - 2020-03-10
 

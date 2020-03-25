@@ -3,43 +3,32 @@
 ### Features
 
 - Manage tasks in TODO.md - a plain text markdown file.
-- The syntax is compatible with [Github Markdown](https://github.github.com/gfm/#task-list-items-extension-)
+- The syntax is compatible with [Github Markdown](https://bit.ly/2wBp1Mk)
 - TODO.md file is portable and can be committed with Pull Requests (PRs) to git repositories.
-- Support custom file, multiple task lists.
-- Checkbox is optional (if your task doesn't have it).
+- Support custom file name, multiple task lists.
+- Checkboxes are optional (if your task titles don't have them).
 
 ### TODO.md
 
-- Task Board is a bit strict about TODO.md syntax.
+[TODO.md format](https://github.com/todomd/todo.md)
+
+- Task Board is a bit strict about TODO.md format.
 
   - Please follow the typical structure like in the example so it can work properly. If it fails to open, please revert or re-generate your TODO.md file to make it work again.
-  - There are "2 spaces" at the end of every task to show as line breaks on Github pages. (Otherwise, Github will render tasks next to each other on the same line)
-  - Done-column name must have "✓" or "[x]" in the name.
-  - Checkboxes are added by default (Github checklist syntax), but if you remove them from task titles, they will not be added next time.
 
-- For now, after making changes to TODO.md file, please re-open the Task Board to loads those changes.
+- For now, after making changes to TODO.md file, please click the Refresh icon (next to the board title) to reload.
 
-Example of TODO.md:
-
-```
-# Project Name
-
-Project Description
-
-### Todo
-
-- [ ] Task 1
-
-### In Progress
-
-- [ ] Task 2
-
-### Done ✓
-
-- [x] Complete Task
-```
+[Example of TODO.md](https://github.com/todomd/todo.md/blob/master/TODO.md)
 
 ### Settings
 
 - Multiple TODO files:
-  - In your settings.json file, add this: `"coddx.taskBoard.fileList": "TODO.md, folder/TODO-name.md"` (comma separated, use your file names)
+  - In your workspace settings.json file, add this: `"coddx.taskBoard.fileList": "TODO.md, folder/TODO-name.md"` (comma separated, use your file names)
+
+### Tips & Tricks
+
+- In the task title:
+  - You can type `#bug` or `#feat` to classify your task.
+  - You can type a name like `@john`, `@jane`.
+  - Date format can be yyyy-mm-dd
+- Use the Search Box to filter for types, names, etc.
