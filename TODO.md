@@ -14,10 +14,10 @@ Coddx Project Description
 
 ### In Progress
 
-- [ ] Respect light theme  
 
 ### Done ✓
 
+- [x] Respect theme colors  
 - [x] Insert Emojis  
 - [x] Toggle sub-task  
 - [x] Rename to Todo.md Kanban Board  

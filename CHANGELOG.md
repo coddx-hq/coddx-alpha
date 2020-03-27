@@ -1,12 +1,13 @@
 # Change Log
 
-## [0.2.25] - 2020-03-26
+## [0.2.27] - 2020-03-27
 
 - Task Board - support multiple task lists defined in user's settings.json.
 - Task Board - refresh button to reload file content.
 - Task Board - checkbox is now optional (if task title doesn't have it).
 - Task Board - support sub-task (task title starts with 2-space indentation).
 - Task Board - task menu for: toggling sub-task; inserting emojis;
+- Task Board - respect theme colors.
 
 ## [0.2.12] - 2020-03-21
 

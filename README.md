@@ -27,7 +27,7 @@ Some useful features like:
 
 <img src="docs/media/task-board-demo.gif" />
 
-<img src="docs/media/task-board.png" height="280" />
+<img src="docs/media/task-board.png" />
 
 <hr />
 
