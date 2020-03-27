@@ -11,11 +11,12 @@ Some useful features like:
 
 ### Task Board
 
-- Manage tasks in TODO.md - a plain text markdown file.
+- Manage tasks with [TODO.md format](https://bit.ly/2JdEuET) - a plain text markdown file.
 - The syntax is compatible with [Github Markdown](https://bit.ly/2wBp1Mk)
 - TODO.md file is portable and can be committed with Pull Requests (PRs) to git repositories.
 - Support custom file name, multiple task lists.
 - Checkboxes are optional (if your task titles don't have them).
+- See also: <a href="https://bit.ly/2WHprLW">Documentation / Guides</a>
 
 #### Usage:
 
