@@ -16,7 +16,7 @@ Some useful features like:
 - TODO.md file is portable and can be committed with Pull Requests (PRs) to git repositories.
 - Support custom file name, multiple task lists.
 - Checkboxes are optional (if your task titles don't have them).
-- See also: <a href="https://bit.ly/2WHprLW">Documentation / Guides</a>
+- See also: <a href="https://bit.ly/2SfcKaH">Documentation / Guides</a>
 
 #### Usage:
 
