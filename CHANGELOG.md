@@ -1,6 +1,11 @@
 # Change Log
 
-## [0.2.27] - 2020-03-27
+## [0.2.52] - 2021-05-20
+
+- Task title supports markdown now for styling, hyperlinks, simple html or even img tags.
+- New Task Action: move a task to the right column.
+
+## [0.2.27] - 2020-03-28
 
 - Task Board - support multiple task lists defined in user's settings.json.
 - Task Board - refresh button to reload file content.
