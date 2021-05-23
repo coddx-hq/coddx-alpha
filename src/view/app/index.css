@@ -1,0 +1,54 @@
+:root {
+  /* --text-color: #eee; */
+  /* --bg-color: #1d1e1d; */
+
+  --button-bg-color: rgb(3, 0, 150);
+  --button-text-color: #777;
+}
+html,
+body {
+  background-color: var(--bg-color); /* Dracula+ Dark Theme */
+}
+
+a {
+  text-decoration: none;
+  color: darkslategray;
+}
+
+li {
+  margin-bottom: 15px;
+}
+
+input {
+  margin-left: 10px;
+}
+
+.save {
+  margin-top: 10px;
+}
+
+.__reactSelect .__select__control {
+  background-color: var(--vscode-tab-background);
+  border: none;
+  margin-top: 5px;
+  min-height: 30px;
+}
+.__reactSelect .__select__input {
+  color: var(--button-text-color);
+}
+.__reactSelect .__select__single-value {
+  color: var(--button-text-color);
+  padding: 0;
+}
+.__reactSelect .__select__option {
+  color: var(--button-text-color);
+}
+.__reactSelect .__select__indicator-separator {
+  background-color: var(--vscode-tab-inactiveBackground);
+}
+.__reactSelect .__select__indicator {
+  color: var(--button-text-color);
+}
+.__reactSelect .__select__option--is-selected {
+  background-color: var(--vscode-tab-inactiveBackground);
+}

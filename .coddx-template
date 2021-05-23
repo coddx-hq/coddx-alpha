@@ -1,0 +1,25 @@
+// -------------->> {{fileName}}.tsx
+// created time: {{YYYY}}-{{MM}}-{{DD}} {{HH}}:{{mm}}
+import * as React from 'react';
+import './{{fileName}}.css';
+
+export default class {{fileName}} extends React.Component {
+  render() {
+    return (
+      <div>
+        {/* ...code goes here... */}
+      </div>
+    )
+  }
+}
+
+// -------------->> {{fileName}}.css
+.main {}
+
+// -------------->> __test__/{{fileName}}.test.tsx
+import * as React from 'react';
+
+it('{{fileName}} - render', () => {
+  // render(<{{fileName}} />);
+  // expect(...);
+});

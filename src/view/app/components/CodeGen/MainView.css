@@ -1,0 +1,91 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+button {
+  background-color: #0063a0;
+  color: #fff;
+  padding: 5px 20px;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0073bb;
+}
+button:disabled {
+  color: #333;
+  cursor: not-allowed;
+}
+
+.mainView {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 10px;
+}
+
+.mainView .body {
+  /* min-height: 92vh; */
+  padding: 10px 0;
+}
+.mainView a {
+  text-decoration: none;
+}
+.mainView textarea {
+  width: 97%;
+  height: 50vh;
+  padding: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2em;
+}
+
+.mainView .fileList {
+  margin: 10px 10px;
+  padding: 0;
+}
+.mainView .fileList li {
+  list-style: none;
+}
+.mainView .fileList input {
+  margin-right: 10px;
+}
+
+.mainView footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.mainView footer input {
+  flex: 1;
+  height: 25px;
+  background-color: #333;
+  color: #eee;
+  border-color: #555;
+  padding: 2px 5px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2em;
+}
+
+.mainView .infoBox div {
+  display: flex;
+  margin-bottom: 10px;
+}
+.mainView .infoBox span {
+  display: inline-block;
+  width: 90px;
+  align-self: center;
+}
+.mainView .infoBox input {
+  flex: 1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /* 'Courier New', Courier, monospace */
+  background-color: #373837;
+  color: #fff;
+  padding: 2px 4px;
+  border: 1px solid #333;
+}

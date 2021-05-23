@@ -4,12 +4,12 @@ Coddx - a collection of tools that help developers program efficiently.
 
 Some useful features like:
 
-- Task Board - manage tasks and save them as TODO.md - a simple plain text file.
+- TODO.md Kanban Board - manage tasks and save them as TODO.md - a simple plain text file.
 - Generating multiple files from templates quickly.
 
 <hr />
 
-### Task Board
+### TODO.md Kanban Board
 
 - Manage tasks with [TODO.md format](https://bit.ly/2JdEuET) - a plain text markdown file.
 - The syntax is compatible with [Github Markdown](https://bit.ly/2wBp1Mk)
