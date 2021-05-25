@@ -10,6 +10,19 @@
 - Custom params.
 - Context menu to generate files/directories from anywhere.
 
+#### Usage:
+
+- Open Coddx panel:
+  - Bring up the Command Palette (F1), type and select: Coddx: Generate Files.
+  - Or: right-click on a directory, select: Generate files.
+- Verify Template to suit your needs. (See <a href="https://bit.ly/2WHprLW">Docs</a> for syntax)
+- Verify the output path (relative to Project root), a new directory will be created if not existed.
+- Enter the new file name to generate file(s).
+
+<img src="docs/media/coddx-demo.gif" />
+  
+<img src="docs/media/panel.png" height="280" />
+
 ### How does it work?
 
 Coddx uses Mozilla's Templating Engine called <a href="https://github.com/mozilla/nunjucks">nunjucks</a>. Nunjucks is a powerful library, supports more advanced use cases like parameters, custom filters, etc.

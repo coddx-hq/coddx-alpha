@@ -1,9 +1,9 @@
 # Change Log
 
-## [0.2.52] - 2021-05-20
+## [0.3.0] - 2021-05-24
 
 - Task title supports markdown now for styling, hyperlinks, simple html or even img tags.
-- New Task Action: move a task to the right column.
+- New Task Action: move a task to the column on the right.
 
 ## [0.2.27] - 2020-03-28
 

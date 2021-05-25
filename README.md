@@ -1,17 +1,9 @@
-# Coddx
+# Todo Kanban Board
 
-Coddx - a collection of tools that help developers program efficiently.
+Todo Kanban Board manages tasks and save them as [TODO.md](https://bit.ly/2JdEuET) - a simple plain text file.
 
-Some useful features like:
+## Features
 
-- TODO.md Kanban Board - manage tasks and save them as TODO.md - a simple plain text file.
-- Generating multiple files from templates quickly.
-
-<hr />
-
-### TODO.md Kanban Board
-
-- Manage tasks with [TODO.md format](https://bit.ly/2JdEuET) - a plain text markdown file.
 - The syntax is compatible with [Github Markdown](https://bit.ly/2wBp1Mk)
 - TODO.md file is portable and can be committed with Pull Requests (PRs) to git repositories.
 - Support custom file name, multiple task lists.
@@ -20,7 +12,7 @@ Some useful features like:
 - Task menu: to insert a sub-task, emoji icons (like bug 🐞 blocked ❌ party 🎉 etc.).
 - See also: <a href="https://bit.ly/2SfcKaH">Documentation / Guides</a>
 
-#### Usage:
+## Usage:
 
 - Open Coddx Task Board:
   - Bring up the Command Palette (F1), type and select: Coddx: Task Board.
@@ -33,35 +25,13 @@ Some useful features like:
 
 <hr />
 
-### Generate Files
+## Support
 
-- Work with any programming languages.
-- Templating syntax.
-- Store templates as a single file (can be committed to git, shared with others).
-- Auto-create sub-directories.
-- Built-in params (fileName, date, time, etc.).
-- Custom params.
-- Context menu to generate files/directories from anywhere.
+- For Feedbacks, Bug Reports: https://github.com/coddx-hq/coddx-alpha/issues
+- Documentation: <a href="https://bit.ly/2WHprLW">Documentation / Guides</a>
+- <a href="https://bit.ly/2y4fgqh">CHANGELOG</a>
 
-#### Usage:
-
-- Open Coddx panel:
-  - Bring up the Command Palette (F1), type and select: Coddx: Generate Files.
-  - Or: right-click on a directory, select: Generate files.
-- Verify Template to suit your needs. (See <a href="https://bit.ly/2WHprLW">Docs</a> for syntax)
-- Verify the output path (relative to Project root), a new directory will be created if not existed.
-- Enter the new file name to generate file(s).
-
-<img src="docs/media/coddx-demo.gif" />
-  
-<img src="docs/media/panel.png" height="280" />
-
-### Support
-
-- Support: https://github.com/coddx-hq/coddx-alpha/issues
-- <a href="https://bit.ly/2WHprLW">Documentation / Guides</a>
-- <a href="https://bit.ly/2y4fgqh">Change Log</a>
-
-### Next milestone:
+## Next milestone:
 
 - Feedbacks, suggestions or ideas are welcome! Thanks.
+- Check out [TODO.md](TODO.md)
