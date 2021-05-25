@@ -28,7 +28,7 @@ Todo Kanban Board manages tasks and save them as [TODO.md](https://bit.ly/2JdEuE
 ## Support
 
 - For Feedbacks, Bug Reports: https://github.com/coddx-hq/coddx-alpha/issues
-- Documentation: <a href="https://bit.ly/2WHprLW">Documentation / Guides</a>
+- Documentation: <a href="https://bit.ly/2SfcKaH">Documentation / Guides</a>
 - <a href="https://bit.ly/2y4fgqh">CHANGELOG</a>
 
 ## Next milestone:
