@@ -124,7 +124,7 @@ export default ({
         </span>
         <a
           style={{ position: 'absolute', right: 15, top: 15 }}
-          href="https://nnote.cc/s/k0o93/todomd-kanban-board-documentation"
+          href="https://github.com/coddx-hq/coddx-alpha/blob/master/docs/documentation.md"
         >
           Help | Doc
         </a>
