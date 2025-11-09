@@ -1,6 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { Droppable, Draggable } from 'react-beautiful-dnd';
+import { useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
+import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import Task, { TaskInterface } from './Task';
 
 const { memo } = React;
@@ -47,49 +49,59 @@ interface ColumnProps {
 }
 
 export default memo(
-  ({ column, tasks, columnIndex, onChangeTask, onDeleteTask, onInProgressTask, onCompleteTask }: ColumnProps) => (
-    <Draggable draggableId={column.id} index={columnIndex}>
-      {(provided, snapshot) => (
-        <Container
-          // {...provided.draggableProps}
-          // {...provided.dragHandleProps}
-          isDragging={snapshot.isDragging}
-          ref={provided.innerRef}
-        >
-          <Title {...provided.dragHandleProps}>
-            <span>{column.title}</span>
-          </Title>
-          <Droppable droppableId={column.id} type="task">
-            {(provided, snapshot) => (
-              <List ref={provided.innerRef} {...provided.droppableProps} isDraggingOver={snapshot.isDraggingOver}>
-                {tasks.map((t, i) => {
-                  if (!t || !t.id) {
-                    return null;
-                  }
-                  return (
-                    <Task
-                      key={t.id}
-                      column={column}
-                      columnIndex={columnIndex}
-                      task={t}
-                      index={i}
-                      onChangeTitle={(newTitle: string) => {
-                        t.content = newTitle;
-                        onChangeTask(t.id, t);
-                      }}
-                      onDelete={(task: TaskInterface) => onDeleteTask(task, column)}
-                      onInProgress={(task: TaskInterface) => onInProgressTask(task, column)}
-                      onComplete={(task: TaskInterface) => onCompleteTask(task, column)}
-                      onChangeTask={onChangeTask}
-                    />
-                  );
-                })}
-                {provided.placeholder}
-              </List>
-            )}
-          </Droppable>
-        </Container>
-      )}
-    </Draggable>
-  )
+  ({ column, tasks, columnIndex, onChangeTask, onDeleteTask, onInProgressTask, onCompleteTask }: ColumnProps) => {
+    const {
+      attributes,
+      listeners,
+      setNodeRef,
+      transform,
+      transition,
+      isDragging,
+    } = useSortable({ id: column.id });
+
+    const style = {
+      transform: CSS.Transform.toString(transform),
+      transition,
+    };
+
+    const taskIds = tasks.map(t => t.id);
+
+    return (
+      <Container
+        ref={setNodeRef}
+        style={style}
+        isDragging={isDragging}
+      >
+        <Title {...listeners} {...attributes}>
+          <span>{column.title}</span>
+        </Title>
+        <SortableContext items={taskIds} strategy={verticalListSortingStrategy}>
+          <List isDraggingOver={false}>
+            {tasks.map((t, i) => {
+              if (!t || !t.id) {
+                return null;
+              }
+              return (
+                <Task
+                  key={t.id}
+                  column={column}
+                  columnIndex={columnIndex}
+                  task={t}
+                  index={i}
+                  onChangeTitle={(newTitle: string) => {
+                    t.content = newTitle;
+                    onChangeTask(t.id, t);
+                  }}
+                  onDelete={(task: TaskInterface) => onDeleteTask(task, column)}
+                  onInProgress={(task: TaskInterface) => onInProgressTask(task, column)}
+                  onComplete={(task: TaskInterface) => onCompleteTask(task, column)}
+                  onChangeTask={onChangeTask}
+                />
+              );
+            })}
+          </List>
+        </SortableContext>
+      </Container>
+    );
+  }
 );

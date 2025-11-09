@@ -1,5 +1,66 @@
 # Change Log
 
+## [0.4.2] - 2025-11-09
+
+### Features
+
+- Added support for H4 headings (`####`) as sub-sections within Kanban columns
+- Added GitHub workflows for automated CI/CD and dependency management
+
+### Improvements
+
+- Enhanced TODO.md parser to handle heading hierarchy correctly
+- H4 headings now display as bold tasks under their parent H3 column instead of creating separate columns
+- Organized project TODO.md by release versions using git history
+
+### Development
+
+- Added CI workflow for automated building and testing
+- Added release workflow for automated VSIX packaging and GitHub releases
+
+## [0.4.1] - 2025-11-09
+
+### Dependencies
+
+- Migrated from deprecated `react-beautiful-dnd` to modern `@dnd-kit` for drag-and-drop functionality
+- Replaced render props pattern with React hooks (`useSortable`)
+
+### Improvements
+
+- Switched from yarn to npm as package manager
+- Removed unused dependencies (react-redux, redux, css-box-model, etc.)
+- Updated to use modern React hooks pattern throughout drag-and-drop components
+- Added `esModuleInterop` to TypeScript config for better ES module compatibility
+
+### Removed
+
+- Removed `react-beautiful-dnd` (deprecated since 2022)
+- Removed `yarn.lock` in favor of `package-lock.json`
+
+## [0.4.0] - 2025-11-09
+
+### Dependencies
+
+- Updated all major build tools and dependencies
+- Replaced deprecated `vscode` package with `@types/vscode` 1.70.0
+- Modernized test runner from deprecated `vscode/lib/testrunner` to Mocha-based setup
+
+### Security Fixes
+
+- Fixed template literal XSS vulnerability in webview data injection (now using JSON.stringify())
+- Updated VS Code webview API from deprecated `vscode-resource:` scheme to modern `asWebviewUri()`
+- Updated Content Security Policy to use `webview.cspSource`
+
+### Bug Fixes
+
+- **Critical**: Fixed backtick rendering bug in Task Board webview that prevented TODO.md files with code blocks from displaying correctly
+
+### Removed
+
+- Removed deprecated `tslint` package (no longer maintained)
+- Removed deprecated `vscode` package
+- Removed `@types/marked` (no longer needed)
+
 ## [0.3.0] - 2021-05-24
 
 - Task title supports markdown now for styling, hyperlinks, simple html or even img tags.

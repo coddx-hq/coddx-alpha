@@ -26,6 +26,25 @@ TODO.md Kanban Board
 
 ### Done ✓
 
+#### v0.4.2 (2025-11-09)
+
+- [x] Support H4 headings (####) as sub-sections within columns
+- [x] Add GitHub workflows
+
+#### v0.4.1 (2025-11-09)
+
+- [x] Migrate from deprecated react-beautiful-dnd to @dnd-kit
+- [x] Remove yarn.lock, use npm as package manager
+
+#### v0.4.0 (2025-11-09)
+
+- [x] 🐞 Bug: Fix backtick ( ` ) rendering (XSS vulnerability)
+- [x] Major dependency updates and security fixes
+
+#### v0.3.x (2021-2022)
+
+- [x] Fix broken documentation links
+- [x] Markdown text formats 05/21/2021
 - [x] Markdown text formats 05/21/2021
 - [x] New task should be at the top 05/20/2021
 - [x] Dropdown option to help about adding more todo files 05/19/2021

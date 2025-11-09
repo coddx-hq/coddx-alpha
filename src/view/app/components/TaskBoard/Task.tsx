@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { Draggable } from 'react-beautiful-dnd';
+import { useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 import TextareaAutosize from 'react-autosize-textarea';
 import { DragIcon } from './Helpers';
 import TaskMenu from './TaskMenu';
@@ -150,19 +151,31 @@ export default memo(
     }
 
     // console.log('column.title', column.title);
+
+    const {
+      attributes,
+      listeners,
+      setNodeRef,
+      transform,
+      transition,
+      isDragging,
+    } = useSortable({ id: task.id, data: { sortable: { containerId: column.id } } });
+
+    const style = {
+      transform: CSS.Transform.toString(transform),
+      transition,
+    };
+
     return (
-      <Draggable draggableId={task.id} index={index}>
-        {(provided, snapshot) => (
-          <TaskContainer
-            {...provided.draggableProps}
-            // {...provided.dragHandleProps}
-            ref={provided.innerRef}
-            isDragging={snapshot.isDragging}
-          >
-            <TaskWrapper>
-              <Handle {...provided.dragHandleProps}>
-                <DragIcon />
-              </Handle>
+      <TaskContainer
+        ref={setNodeRef}
+        style={style}
+        isDragging={isDragging}
+      >
+        <TaskWrapper>
+          <Handle {...listeners} {...attributes}>
+            <DragIcon />
+          </Handle>
               <TickMark>{column.title.indexOf('✓') >= 0 ? '✓ ' : ''}</TickMark>
 
               {isEditing ? (
@@ -253,8 +266,6 @@ export default memo(
               )}
             </TaskWrapper>
           </TaskContainer>
-        )}
-      </Draggable>
     );
   }
 );

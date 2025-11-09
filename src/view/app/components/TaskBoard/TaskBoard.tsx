@@ -2,7 +2,20 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { CommandAction } from '../../model';
 import { sendCommand, getVscodeHelper } from '../../Utils';
-import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+  DragEndEvent,
+} from '@dnd-kit/core';
+import {
+  SortableContext,
+  sortableKeyboardCoordinates,
+  horizontalListSortingStrategy,
+} from '@dnd-kit/sortable';
 import { parseMarkdown, defaultDataString, getMarkdown } from './Helpers';
 
 import { TaskInterface } from './Task';
@@ -29,6 +42,13 @@ export default function TaskBoard({ vscode, initialData }) {
   const [state, setState] = useState(data);
   const vscodeHelper = getVscodeHelper(vscode);
 
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
+
   const reloadFile = () => sendCommand(vscode, CommandAction.Load, selectedFile);
 
   React.useEffect(() => {
@@ -38,6 +58,100 @@ export default function TaskBoard({ vscode, initialData }) {
   const updateStateAndSave = newState => {
     setState(newState);
     vscodeHelper.saveList(getMarkdown(newState));
+  };
+
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+
+    if (!over || active.id === over.id) {
+      return;
+    }
+
+    // Handle column reordering
+    if (state.columnOrder.includes(active.id as string) && state.columnOrder.includes(over.id as string)) {
+      const oldIndex = state.columnOrder.indexOf(active.id as string);
+      const newIndex = state.columnOrder.indexOf(over.id as string);
+
+      const newColOrd = [...state.columnOrder];
+      newColOrd.splice(oldIndex, 1);
+      newColOrd.splice(newIndex, 0, active.id as string);
+
+      const newState = {
+        ...state,
+        columnOrder: newColOrd
+      };
+      updateStateAndSave(newState);
+      return;
+    }
+
+    // Handle task reordering within or between columns
+    const activeTaskId = active.id as string;
+    const overContainer = over.data.current?.sortable?.containerId || over.id as string;
+
+    // Find which column contains the active task
+    let sourceColumn: any = null;
+    let sourceColumnId: string | null = null;
+    for (const [colId, col] of Object.entries(state.columns)) {
+      if ((col as any).taskIds.includes(activeTaskId)) {
+        sourceColumn = col;
+        sourceColumnId = colId;
+        break;
+      }
+    }
+
+    if (!sourceColumn || !sourceColumnId) {
+      return;
+    }
+
+    const destColumn = state.columns[overContainer];
+    if (!destColumn) {
+      return;
+    }
+
+    if (sourceColumnId === overContainer) {
+      // Reordering within the same column
+      const oldIndex = sourceColumn.taskIds.indexOf(activeTaskId);
+      const newIndex = destColumn.taskIds.indexOf(over.id as string);
+
+      const newTaskIds = [...sourceColumn.taskIds];
+      newTaskIds.splice(oldIndex, 1);
+      newTaskIds.splice(newIndex, 0, activeTaskId);
+
+      const newState = {
+        ...state,
+        columns: {
+          ...state.columns,
+          [sourceColumnId]: {
+            ...sourceColumn,
+            taskIds: newTaskIds
+          }
+        }
+      };
+      updateStateAndSave(newState);
+    } else {
+      // Moving between columns
+      const sourceTaskIds = sourceColumn.taskIds.filter(id => id !== activeTaskId);
+      const destIndex = destColumn.taskIds.indexOf(over.id as string);
+      const destTaskIds = [...destColumn.taskIds];
+      destTaskIds.splice(destIndex >= 0 ? destIndex : destTaskIds.length, 0, activeTaskId);
+
+      const newState = {
+        ...state,
+        columns: {
+          ...state.columns,
+          [sourceColumnId]: {
+            ...sourceColumn,
+            taskIds: sourceTaskIds
+          },
+          [overContainer]: {
+            ...destColumn,
+            taskIds: destTaskIds
+          }
+        },
+        tasks: data.tasks
+      };
+      updateStateAndSave(newState);
+    }
   };
 
   // const [msg, setMsg] = useState('');
@@ -79,88 +193,17 @@ export default function TaskBoard({ vscode, initialData }) {
           sendCommand(vscode, CommandAction.Load, selectedOpt.value);
         }}
       />
-      <DragDropContext
-        onDragEnd={({ destination, source, draggableId, type }) => {
-          if (!destination) {
-            return;
-          }
-          if (destination.droppableId === source.droppableId && destination.index === source.index) {
-            return;
-          }
-
-          if (type === 'column') {
-            const newColOrd = Array.from(state.columnOrder);
-            newColOrd.splice(source.index, 1);
-            newColOrd.splice(destination.index, 0, draggableId);
-
-            const newState = {
-              ...state,
-              columnOrder: newColOrd
-            };
-            updateStateAndSave(newState);
-            return;
-          }
-
-          const startcol = state.columns[source.droppableId];
-          const endcol = state.columns[destination.droppableId];
-
-          // console.log("startcol", startcol);
-          // if (!startcol) {
-          //   return;
-          // }
-
-          if (startcol === endcol) {
-            const tasks = Array.from(startcol.taskIds);
-            tasks.splice(source.index, 1);
-            tasks.splice(destination.index, 0, draggableId);
-
-            const newCol = {
-              ...startcol,
-              taskIds: tasks
-            };
-
-            const newState = {
-              ...state,
-              columns: {
-                ...state.columns,
-                [newCol.id]: newCol
-              }
-            };
-
-            // setState(newState);
-            updateStateAndSave(newState);
-            return;
-          }
-          const startTaskIds = Array.from(startcol.taskIds);
-          startTaskIds.splice(source.index, 1);
-          const newStart = {
-            ...startcol,
-            taskIds: startTaskIds
-          };
-          const endTaskIds = Array.from(endcol.taskIds);
-          endTaskIds.splice(destination.index, 0, draggableId);
-          const newEnd = {
-            ...endcol,
-            taskIds: endTaskIds
-          };
-          const newState = {
-            ...state,
-            columns: {
-              ...state.columns,
-              [newStart.id]: newStart,
-              [newEnd.id]: newEnd
-            },
-            tasks: data.tasks
-          };
-          // setState(newState);
-          updateStateAndSave(newState);
-          // loadData(vscode, getMarkdown(newState)) // reload data to make sure it's reliable.
-        }}
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCenter}
+        onDragEnd={handleDragEnd}
       >
-        <Droppable droppableId="columns" direction="horizontal" type="column">
-          {provided => (
-            <Columns {...provided.droppableProps} ref={provided.innerRef}>
-              {state.columnOrder.map((id, idx) => {
+        <SortableContext
+          items={state.columnOrder}
+          strategy={horizontalListSortingStrategy}
+        >
+          <Columns>
+            {state.columnOrder.map((id, idx) => {
                 const col = state.columns[id];
                 if (idx === Object.keys(state.columns).length - 1) {
                   col.isLast = true;
@@ -225,11 +268,9 @@ export default function TaskBoard({ vscode, initialData }) {
                   />
                 );
               })}
-              {provided.placeholder}
             </Columns>
-          )}
-        </Droppable>
-      </DragDropContext>
+          </SortableContext>
+        </DndContext>
       {/* <pre>{msg}</pre> */}
     </div>
   );

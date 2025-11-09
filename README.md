@@ -10,7 +10,7 @@ Todo Kanban Board manages tasks and save them as [TODO.md](https://bit.ly/2JdEuE
 - Checkboxes are optional (if your task titles don't have them).
 - Task title can also have markdown for styling, hyperlinks, simple html or even img tags.
 - Task menu: to insert a sub-task, emoji icons (like bug 🐞 blocked ❌ party 🎉 etc.).
-- See also: <a href="https://bit.ly/2SfcKaH">Documentation / Guides</a>
+- See also: <a href="https://github.com/coddx-hq/coddx-alpha/blob/master/docs/documentation.md">Documentation / Guides</a>
 
 ## Usage:
 
@@ -28,7 +28,7 @@ Todo Kanban Board manages tasks and save them as [TODO.md](https://bit.ly/2JdEuE
 ## Support
 
 - For Feedbacks, Bug Reports: https://github.com/coddx-hq/coddx-alpha/issues
-- Documentation: <a href="https://bit.ly/2SfcKaH">Documentation / Guides</a>
+- Documentation: <a href="https://github.com/coddx-hq/coddx-alpha/blob/master/docs/documentation.md">Documentation / Guides</a>
 - <a href="https://bit.ly/2y4fgqh">CHANGELOG</a>
 
 ## Next milestone:

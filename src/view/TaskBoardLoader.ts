@@ -108,7 +108,7 @@ export default class ViewLoader {
   private getWebviewContent({ basePath, templateString, fileList, selectedFile, rootPath }): string {
     // Local path to main script run in the webview
     const reactAppPathOnDisk = vscode.Uri.file(path.join(this._extensionPath, 'configViewer', 'configViewer.js'));
-    const reactAppUri = reactAppPathOnDisk.with({ scheme: 'vscode-resource' });
+    const reactAppUri = this._panel!.webview.asWebviewUri(reactAppPathOnDisk);
 
     // const configJson = JSON.stringify(config);
     const fullPath = deepFind(vscode, 'workspace.workspaceFolders[0].uri.fsPath', '') + `/${selectedFile}`;
@@ -124,11 +124,11 @@ export default class ViewLoader {
         <meta http-equiv="Content-Security-Policy"
                     content="default-src 'none';
                              img-src https:;
-                             script-src 'unsafe-eval' 'unsafe-inline' vscode-resource:;
-                             style-src vscode-resource: 'unsafe-inline';">
+                             script-src 'unsafe-eval' 'unsafe-inline' ${this._panel!.webview.cspSource};
+                             style-src ${this._panel!.webview.cspSource} 'unsafe-inline';">
         <script>
           window.acquireVsCodeApi = acquireVsCodeApi;
-          window.initialData = { name: 'TaskBoard', path: \`${basePath}\`, dataString: \`${templateString}\`, fileList: \`${fileList}\`, selectedFile: \`${selectedFile}\` };
+          window.initialData = { name: 'TaskBoard', path: ${JSON.stringify(basePath)}, dataString: ${JSON.stringify(templateString)}, fileList: ${JSON.stringify(fileList)}, selectedFile: ${JSON.stringify(selectedFile)} };
         </script>
     </head>
     <body>

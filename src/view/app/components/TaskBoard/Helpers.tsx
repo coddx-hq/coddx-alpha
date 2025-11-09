@@ -111,6 +111,25 @@ export function parseMarkdown(md: string) {
       output.columnOrder.push(lastColName);
       return;
     }
+
+    // Handle #### as sub-headings within a column (treated as tasks)
+    if (line.indexOf('#### ') === 0) {
+      if (listFound && lastColName) {
+        taskNum++;
+        const id = `task${taskNum}`;
+        const title = line.replace('#### ', '').trim();
+        const task: TaskInterface = {
+          id,
+          content: `**${title}**`, // Make sub-headings bold
+          hasCheckbox: false,
+          done: isDoneColumn(lastColName),
+          level: 0
+        };
+        output.tasks[id] = task;
+        output.columns[lastColName].taskIds.push(id);
+      }
+      return;
+    }
     if (!listFound) {
       return;
     }
